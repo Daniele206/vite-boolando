@@ -1,1 +1,9 @@
-@use './variable' as *;
+@use './variables' as *;
+
+img{
+  max-width: 100%;
+}
+
+.container{
+  width: 1420px;
+}

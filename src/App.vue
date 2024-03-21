@@ -1,5 +1,6 @@
 <script>
 import '/node_modules/bootstrap/dist/js/bootstrap.js';
+
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
