@@ -15,6 +15,11 @@
             text: 'bambini',
             link: '#'
           }
+        ],
+        icoMenu:[
+          'fa-regular fa-user',
+          'px-2 fa-regular fa-heart',
+          'fa-solid fa-bag-shopping'
         ]
       }
     },
@@ -43,9 +48,7 @@
         <img class="w-75" src="/public/boolean-logo.png" alt="Boolean">
       </div>
       <div class="my_section d-flex justify-content-end">
-        <i class="fa-regular fa-user"></i>
-        <i class="px-2 fa-regular fa-heart"></i>
-        <i class="fa-solid fa-bag-shopping"></i>
+        <i v-for="ico in icoMenu" :class="ico"></i>
       </div>
     </div>
   </header>
