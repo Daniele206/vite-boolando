@@ -20,3 +20,4 @@ Popoliamo le voci dell’header (sia le tre voci testuali che le tre icone) dina
 2. Inserirli nella cartella components e importarli in app.vue.
 3. Andare a ricreare l'headre nel file apposito (utilizzando sass).
 4. Andare a ricreare il footer nel file apposito (utilizzando sass).
+5. **Bonus:** Aggiungere gli elementi dinamicamente.
