@@ -2,7 +2,7 @@
   export default {
     data(){
       return{
-        
+
       }
     }
     
@@ -11,7 +11,7 @@
 
 <template>
   <header>
-    <div class="container">
+    <div class="my_container">
       <div class="my_section">
         <a href="#">Donna</a>
         <a href="#" class="px-3">Uomo</a>
@@ -37,7 +37,8 @@ header{
   height: 70px;
   position: fixed;
   width: 100%;
-  .container{
+  box-shadow: 0 1px 3px gray;
+  .my_container{
     height: 100%;
     color:white;
     display: flex;
@@ -53,6 +54,7 @@ header{
       i{
         color: white;
         font-size: 1.2rem;
+        cursor: pointer;
       }
     }
   }
