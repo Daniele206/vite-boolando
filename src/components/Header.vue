@@ -2,10 +2,30 @@
   export default {
     data(){
       return{
+        types:[
+          {
+            text: 'Donna',
+            link: '#'
+          },
+          {
+            text: 'Uomo',
+            link: '#'
+          },
+          {
+            text: 'bambini',
+            link: '#'
+          }
+        ]
+      }
+    },
 
+    methods:{
+      padding(i){
+        if(i > 0 && i < this.types.length - 1){
+          return 'px-2'
+        }
       }
     }
-    
   }
 </script>
 
@@ -13,9 +33,11 @@
   <header>
     <div class="my_container">
       <div class="my_section">
-        <a href="#">Donna</a>
-        <a href="#" class="px-3">Uomo</a>
-        <a href="#">Bambini</a>
+        <a
+        v-for="(type, i) in types"
+        :class="padding(i)"
+        :href="type.link"
+        >{{ type.text }}</a>
       </div>
       <div class="my_section d-flex justify-content-center">
         <img class="w-75" src="/public/boolean-logo.png" alt="Boolean">

@@ -1,6 +1,38 @@
 <script>
   export default {
+    data(){
+      return{
+        info:[
+          {
+            text: 'Informazioni legali',
+            link: '#'
+          },
+          {
+            text: 'Informativa sulla privacy',
+            link: '#'
+          },
+          {
+            text: 'Diritto di recesso',
+            link: '#'
+          }
+        ],
+        socials:[
+          'fa-brands fa-x-twitter',
+          'fa-brands fa-square-facebook',
+          'fa-brands fa-square-instagram',
+          'fa-brands fa-square-pinterest',
+          'fa-brands fa-square-youtube',
+        ]
+      }
+    },
     
+    methods:{
+      padding(i){
+        if(i > 0 && i < this.info.length - 1){
+          return 'px-2'
+        }
+      }
+    }
   }
 </script>
 
@@ -10,19 +42,17 @@
       <div>
         <span class="agency">Boolando s.r.l.</span>
         <div>
-          <a href="#">Informazioni legali</a>
-          <a class="px-2" href="#">Informativa sulla privacy</a>
-          <a href="#">Diritto di recesso</a>
+          <a
+          v-for="(infor, i) in info"
+          :class="padding(i)"
+          :href="infor.link"
+          >{{ infor.text }}</a>
         </div>
       </div>
       <div>
         <span class="social_direct">Trovaci anche su</span>
         <div class="d-flex justify-content-between">
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-square-facebook"></i>
-          <i class="fa-brands fa-square-instagram"></i>
-          <i class="fa-brands fa-square-pinterest"></i>
-          <i class="fa-brands fa-square-youtube"></i>
+          <i v-for="social in socials" :class="social"></i>
         </div>
       </div>
     </div>

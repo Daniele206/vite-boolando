@@ -15,7 +15,8 @@ import Footer from './components/Footer.vue';
       return{
 
       }
-    }
+    },
+
   }
 </script>
 
