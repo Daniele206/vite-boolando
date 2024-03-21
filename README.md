@@ -16,3 +16,7 @@ Popoliamo le voci dell’header (sia le tre voci testuali che le tre icone) dina
 **NB:** Occupatevi solamente di completare l’header, e il footer. Create un componente main che per ora rimane vuoto con un testo di placeholder.
 
 ## Svolgimento
+1. Andare a suddividere i vue in tre macro-blocchi, header, main, footer.
+2. Inserirli nella cartella components e importarli in app.vue.
+3. Andare a ricreare l'headre nel file apposito (utilizzando sass).
+4. Andare a ricreare il footer nel file apposito (utilizzando sass).
