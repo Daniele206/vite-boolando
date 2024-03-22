@@ -5,7 +5,34 @@
       secondImg: String,
       productBrand: String,
       productName: String,
+      productPrice: Number,
+      isLike: Boolean,
+      productBages: Array
     },
+    
+    methods:{
+      discSos(type){
+        if(type === 'discount'){
+          return 'discount'
+        }else if(type === 'tag'){
+          return 'sostenibility'
+        }
+      },
+      
+      reverseArray(array){
+        if(array.length > 1){
+          if(array.at(0).type === 'tag'){
+            array.unshift(array[array.length -1])
+            array.splice(array.length-1, 1)
+            return array
+          }
+          return array
+        }else{
+            return array
+        }
+      }
+      
+    }
   }
 </script>
 
@@ -15,16 +42,16 @@
       <img class="my_img_first" :src="`public/img/${firstrImg}`" alt="non si vede l'immagine">
       <img class="my_img_second" :src="`public/img/${secondImg}`" alt="">
       <div class="like">
-        <i class="fa-solid fa-heart"></i>
+        <i :class="{'red' : isLike}" class="fa-solid fa-heart"></i>
       </div>
       <div class="product_info">
-        <span class="discount">-50%</span> <span class="sostenibility">Sostenibilitá</span>
+        <span v-for="(bage, i) in reverseArray(productBages)" :key="i" :class="discSos(bage.type)">{{ bage.value }}</span>
       </div>
     </div>
     <div class="description">
       <span>{{ productBrand }}</span>
       <span class="product-name">{{ productName }}</span>
-      <span>price</span>
+      <span>{{ productPrice }}&euro;</span>
     </div>
   </div>
 </template>
@@ -32,10 +59,14 @@
 <style lang="scss" scoped>
 @use '../../assets/scss/variables' as *;
 
+.red{
+  color: $my_red;
+};
+
 .my_card{
-  width: 33%;
-  min-width: 460px;
-  margin: 25px 0;
+  width: 460px;
+  max-width: 100%;
+  margin: 25px auto;
   .my_card_img{
     cursor: pointer;
     position: relative;
@@ -59,9 +90,6 @@
       position: absolute;
       top: 20px;
       right: 0;
-      &:hover i{
-        color: $my_red;
-      }
     };
     .product_info{
       position: absolute;
