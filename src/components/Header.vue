@@ -1,35 +1,13 @@
 <script>
+  import { headerMenues } from '../data/menues';
+  
   export default {
-    data(){
-      return{
-        types:[
-          {
-            text: 'Donna',
-            link: '#'
-          },
-          {
-            text: 'Uomo',
-            link: '#'
-          },
-          {
-            text: 'bambini',
-            link: '#'
-          }
-        ],
-        icoMenu:[
-          {
-            class: 'fa-regular fa-user',
-            link: '#'
-          },
-          {
-            class: 'mx-2 fa-regular fa-heart',
-            link: '#'
-          },
-          {
-            class: 'fa-solid fa-bag-shopping',
-            link: '#'
-          },
-        ]
+    computed:{
+      types(){
+        return headerMenues.types
+      },
+      icoMenu(){
+        return headerMenues.icoMenu
       }
     },
 
@@ -40,7 +18,7 @@
         }
       }
     }
-  }
+}
 </script>
 
 <template>
@@ -91,6 +69,8 @@ header{
     align-items: center;
     .my_section{
       width: 220px;
+      display: flex;
+      align-items: center;
       a{
         text-decoration: none;
         color: white;

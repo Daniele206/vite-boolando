@@ -1,43 +1,13 @@
 <script>
+  import { footerMenues } from '../data/menues';
+
   export default {
-    data(){
-      return{
-        info:[
-          {
-            text: 'Informazioni legali',
-            link: '#'
-          },
-          {
-            text: 'Informativa sulla privacy',
-            link: '#'
-          },
-          {
-            text: 'Diritto di recesso',
-            link: '#'
-          }
-        ],
-        socials:[
-          {
-            class: 'fa-brands fa-x-twitter',
-            link: '#'
-          },
-          {
-            class: 'fa-brands fa-square-facebook',
-            link: '#'
-          },
-          {
-            class: 'fa-brands fa-square-instagram',
-            link: '#'
-          },
-          {
-            class: 'fa-brands fa-square-pinterest',
-            link: '#'
-          },
-          {
-            class: 'fa-brands fa-square-youtube',
-            link: '#'
-          },
-        ]
+    computed:{
+      info(){
+        return footerMenues.info
+      },
+      socials(){
+        return footerMenues.socials
       }
     },
     
@@ -58,12 +28,12 @@
         <span class="agency">Boolando s.r.l.</span>
         <div>
           <ul class="my_menu">
-            <li v-for="(infor, i) in info"
+            <li v-for="(infoS, i) in info"
             :key="`i-${i}`">
               <a
               :class="padding(i)"
-              :href="infor.link"
-              >{{ infor.text }}</a>
+              :href="infoS.link"
+              >{{ infoS.text }}</a>
             </li>
           </ul>
         </div>
