@@ -1,7 +1,14 @@
 <script>
   import card from './partials/card.vue';
+  import { products } from '../data/db.json';
 
   export default {
+    data(){
+      return{
+        products
+      }
+    },
+
     components:{
       card
     }
@@ -12,12 +19,14 @@
   <main>
     <div class="my_container">
       <div class="my_row">
-        <card />
-        <card />
-        <card />
-        <card />
-        <card />
-        <card />
+        <card 
+        v-for="product in products"
+        :key="product.id"
+        :firstrImg="product.frontImage"
+        :secondImg="product.backImage"
+        :productBrand="product.brand"
+        :productName="product.name"
+        />
       </div>
     </div>
   </main>

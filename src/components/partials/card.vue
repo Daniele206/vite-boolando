@@ -1,16 +1,19 @@
 <script>
   export default {
     props:{
-
-    }
+      firstrImg: String,
+      secondImg: String,
+      productBrand: String,
+      productName: String,
+    },
   }
 </script>
 
 <template>
   <div class="my_card">
     <div class="my_card_img">
-      <img class="my_img_first" src="../../assets/img/1.webp" alt="">
-      <img class="my_img_second" src="../../assets/img/1b.webp" alt="">
+      <img class="my_img_first" :src="`public/img/${firstrImg}`" alt="non si vede l'immagine">
+      <img class="my_img_second" :src="`public/img/${secondImg}`" alt="">
       <div class="like">
         <i class="fa-solid fa-heart"></i>
       </div>
@@ -19,8 +22,8 @@
       </div>
     </div>
     <div class="description">
-      <span>text</span>
-      <span>text</span>
+      <span>{{ productBrand }}</span>
+      <span class="product-name">{{ productName }}</span>
       <span>price</span>
     </div>
   </div>
@@ -33,7 +36,6 @@
   width: 33%;
   min-width: 460px;
   margin: 25px 0;
-  background-color: red;
   .my_card_img{
     cursor: pointer;
     position: relative;
@@ -81,6 +83,12 @@
   .description{
     span{
       display: block;
+      line-height: 1.15rem
+    };
+    .product-name{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.3rem;
     }
   }
 }
