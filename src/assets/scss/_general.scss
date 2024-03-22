@@ -1,5 +1,3 @@
-@use './variables' as *;
-
 img{
   max-width: 100%;
 }
@@ -7,4 +5,10 @@ img{
 .my_container{
   width: 1420px;
   margin: 0 auto;
+}
+
+.my_menu{
+  display: flex;
+  padding: 0;
+  list-style: none;
 }

@@ -17,11 +17,26 @@
           }
         ],
         socials:[
-          'fa-brands fa-x-twitter',
-          'fa-brands fa-square-facebook',
-          'fa-brands fa-square-instagram',
-          'fa-brands fa-square-pinterest',
-          'fa-brands fa-square-youtube',
+          {
+            class: 'fa-brands fa-x-twitter',
+            link: '#'
+          },
+          {
+            class: 'fa-brands fa-square-facebook',
+            link: '#'
+          },
+          {
+            class: 'fa-brands fa-square-instagram',
+            link: '#'
+          },
+          {
+            class: 'fa-brands fa-square-pinterest',
+            link: '#'
+          },
+          {
+            class: 'fa-brands fa-square-youtube',
+            link: '#'
+          },
         ]
       }
     },
@@ -29,7 +44,7 @@
     methods:{
       padding(i){
         if(i > 0 && i < this.info.length - 1){
-          return 'px-2'
+          return 'mx-2'
         }
       }
     }
@@ -42,17 +57,28 @@
       <div>
         <span class="agency">Boolando s.r.l.</span>
         <div>
-          <a
-          v-for="(infor, i) in info"
-          :class="padding(i)"
-          :href="infor.link"
-          >{{ infor.text }}</a>
+          <ul class="my_menu">
+            <li v-for="(infor, i) in info"
+            :key="`i-${i}`">
+              <a
+              :class="padding(i)"
+              :href="infor.link"
+              >{{ infor.text }}</a>
+            </li>
+          </ul>
         </div>
       </div>
       <div>
         <span class="social_direct">Trovaci anche su</span>
-        <div class="d-flex justify-content-between">
-          <i v-for="social in socials" :class="social"></i>
+        <div>
+          <ul class="my_menu justify-content-between">
+            <li v-for="(social, i) in socials"
+            :key="`s-${i}`">
+              <a :href="social.link">
+                <i :class="social.class"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

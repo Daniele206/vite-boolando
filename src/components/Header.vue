@@ -17,9 +17,18 @@
           }
         ],
         icoMenu:[
-          'fa-regular fa-user',
-          'px-2 fa-regular fa-heart',
-          'fa-solid fa-bag-shopping'
+          {
+            class: 'fa-regular fa-user',
+            link: '#'
+          },
+          {
+            class: 'mx-2 fa-regular fa-heart',
+            link: '#'
+          },
+          {
+            class: 'fa-solid fa-bag-shopping',
+            link: '#'
+          },
         ]
       }
     },
@@ -27,7 +36,7 @@
     methods:{
       padding(i){
         if(i > 0 && i < this.types.length - 1){
-          return 'px-2'
+          return 'mx-2'
         }
       }
     }
@@ -38,17 +47,28 @@
   <header>
     <div class="my_container">
       <div class="my_section">
-        <a
-        v-for="(type, i) in types"
-        :class="padding(i)"
-        :href="type.link"
-        >{{ type.text }}</a>
+        <ul class="my_menu">
+          <li v-for="(type, i) in types"
+          :key="`t-${i}`">
+            <a
+            :class="padding(i)"
+            :href="type.link"
+            >{{ type.text }}</a>
+          </li>
+        </ul>
       </div>
       <div class="my_section d-flex justify-content-center">
-        <img class="w-75" src="/public/boolean-logo.png" alt="Boolean">
+        <img class="w-75" src="/public/img/boolean-logo.png" alt="Boolean">
       </div>
       <div class="my_section d-flex justify-content-end">
-        <i v-for="ico in icoMenu" :class="ico"></i>
+        <ul class="my_menu">
+          <li v-for="(ico, i) in icoMenu"
+          :key="`ico-${i}`">
+            <a :href="ico.link">
+              <i :class="ico.class"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
