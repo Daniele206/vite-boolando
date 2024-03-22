@@ -30,8 +30,7 @@
         }else{
             return array
         }
-      }
-      
+      },
     }
   }
 </script>
