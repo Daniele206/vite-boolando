@@ -59,6 +59,7 @@ header{
   background-color: $my_orange;
   height: 70px;
   position: fixed;
+  z-index: 999;
   width: 100%;
   box-shadow: 0 1px 3px gray;
   .my_container{
